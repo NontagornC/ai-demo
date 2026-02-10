@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import { LuScanLine } from "react-icons/lu";
+import { BsCamera } from "react-icons/bs";
 
 const ScanPage = () => {
   const inputRef = useRef<HTMLInputElement>(null);
@@ -36,13 +37,13 @@ const ScanPage = () => {
 
   return (
     <div className="flex items-center justify-center w-full">
-      <div className="rounded-2xl bg-white w-full h-full min-h-92 shadow flex items-center justify-center flex-col p-4 gap-4">
+      <div className="rounded-2xl bg-white w-full h-full shadow flex items-center justify-center flex-col p-4 gap-4">
         {isUpload && uploadFile ? (
           <>
             <img
               src={uploadFile}
               alt="upload-file-img"
-              className="rounded-lg"
+              className="rounded-lg object-fill max-h-96 h-96"
             />
             <button
               onClick={clearUpload}
@@ -53,7 +54,14 @@ const ScanPage = () => {
           </>
         ) : (
           <>
-            <span>Scan Page</span>
+            <div className="h-96 flex items-center justify-center flex-col gap-2">
+              <div className="rounded-full bg-blue-primary p-5">
+                <BsCamera size={50} className="text-white" />
+              </div>
+              <span className="text-zinc-700">
+                เลือกรูป หรือถ่ายรูปเพื่อสแกน
+              </span>
+            </div>
             <input
               ref={inputRef}
               onChange={handleUploadFile}
