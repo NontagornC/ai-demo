@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import { LuScanLine } from "react-icons/lu";
 import { BsCamera } from "react-icons/bs";
+import { IoMdPhotos } from "react-icons/io";
 
 const ScanPage = () => {
   const inputRef = useRef<HTMLInputElement>(null);
@@ -55,8 +56,11 @@ const ScanPage = () => {
         ) : (
           <>
             <div className="h-96 flex items-center justify-center flex-col gap-2">
-              <div className="rounded-full bg-blue-primary p-5">
-                <BsCamera size={50} className="text-white" />
+              <div className="rounded-full bg-blue-primary p-5 relative">
+                <LuScanLine size={50} className="text-white" />
+                <div className="absolute -top-3.5 -right-1 rounded-full bg-white text-blue-primary shadow-xl p-2 ">
+                  <IoMdPhotos size={20} className=" text-blue-primary" />
+                </div>
               </div>
               <span className="text-zinc-700 font-semibold text-2xl">
                 เริ่มสแกนรูปภาพของคุณ
@@ -77,7 +81,7 @@ const ScanPage = () => {
               onClick={handleScanButton}
               className="bg-blue-primary w-full text-white rounded-lg h-14 inline-flex items-center gap-3 justify-center text-lg"
             >
-              <LuScanLine size={25} /> Scan
+              <BsCamera size={25} /> เลือกภาพหรือถ่ายรูป
             </button>
           </>
         )}
