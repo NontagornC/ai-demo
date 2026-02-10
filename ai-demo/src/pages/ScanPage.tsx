@@ -58,8 +58,11 @@ const ScanPage = () => {
               <div className="rounded-full bg-blue-primary p-5">
                 <BsCamera size={50} className="text-white" />
               </div>
-              <span className="text-zinc-700">
-                เลือกรูป หรือถ่ายรูปเพื่อสแกน
+              <span className="text-zinc-700 font-semibold text-2xl">
+                เริ่มสแกนรูปภาพของคุณ
+              </span>
+              <span className="text-zinc-700 text-center">
+                ถ่ายภาพหรือเลือกภาพจากอัลบั้ม<br></br> เพื่อให้ AI ตรวจสอบ
               </span>
             </div>
             <input
